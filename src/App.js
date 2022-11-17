@@ -1,6 +1,7 @@
 import Product from './component/Product';
 import './App.css';
-
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import ViewProdect from './component/ViewProdect';
 function App() {
     // return(
     //   <>
@@ -10,10 +11,17 @@ function App() {
     //   </Routes>
     //   </>
     // )
+
+
+    //component={ (id) => <ViewProdect {...id} /> }
   return (
-    <div className="App">
-     <Product />
-    </div>
+  <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Product />} />
+      <Route path="/ViewData/:id" element={ <ViewProdect />} />
+      <Route path='/card' element={<Product />} />
+    </Routes>
+  </BrowserRouter>
   );
 }
 
