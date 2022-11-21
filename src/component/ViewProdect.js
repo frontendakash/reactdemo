@@ -36,22 +36,15 @@ function ViewProdect() {
 
 
   return (
-    <div className='container-fluid py-5'>
-      <div className='row'>
+    <div className='container-fluid'>
+      <div className='row container-fluid'>
         {
           product.length > 0 && product.map((products) => {
             if (products.id == id) {
               return (
                 <>
-                  <div className='col-6' key={products.id}>
+                  <div className='col-6 mt-4' key={products.id}>
                     <div className='card w-50'>
-                      {/* <div className='card-img-top ms-2' id="imgtop" >
-                      <img src={products.images}  alt="..." />
-                    </div>
-                    <div className='card-title bg-dark' id="affetected_plants" style={{color:"white"}}>
-                      {products.affetected_plants[0]}
-                    </div> */}
-
                       <Carousel pause='hover' interval={null}>
                         {
                           products.images.map((img, i) => (
@@ -67,7 +60,7 @@ function ViewProdect() {
                     </div>
                   </div>
 
-                  <div className='col-6'>
+                  <div className='col-6 mt-4'>
                     <div>
                       <h4>Symptoms :</h4>
                       <p>{products.symptoms}</p>
